@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteInformeActividad" >
+
+  <typeAlias alias="ReporteInformeActividad" type="pe.gob.mincetur.informe.bean.ReporteInformeActividad" />
+	
+  <select id="getReporteInformeActividad" resultClass="ReporteInformeActividad" parameterClass="ReporteInformeActividad">
+	select   
+		ia.ID_INFORME_ACTIVIDAD as idInformeActividad,
+		oc.DES_OCEX as desOcex,
+		ia.ID_RECEPTOR_PERSONA as idReceptorPersona,
+		ia.DES_ASUNTO as desAsunto,
+		ia.FEC_EMISION_INFORME as fecEmisionInforme,
+		ia.ID_RECEPTOR_OFICINA as idReceptorOficina,
+		ia.DES_INFO_MERCADO as desCualidadMercado,
+		ia.DES_CONCLUSIONES as desConclusiones,
+		ia.DES_RECOMENDACIONES as desRecomendaciones,
+		ia.DES_ANTECEDENTES as desAntecedentes,
+		ia.DES_OBJETIVO_IMPORT as desObjetivoImport,
+		ac.DES_ACTIVIDAD as desActividad,
+		ta.DES_TIPO_ACTIVIDAD as desTipoActividad,
+		ac.FEC_INI_ACTIVIDAD as fecIniActividad,
+		ac.FEC_FIN_ACTIVIDAD as fecFinACtividad,
+		ci.DES_CIUDAD as desCiudad,
+		se.DES_SECTOR_NEGOCIO as desSectorNegocio,
+		ac.DES_PRODUCTO as desProducto,
+		ac.DES_FRECUENCIA as desFrecuencia,
+		ac.DES_FUNDACION as desFundacion,
+		ac.DES_ORGANIZADOR as desOrganizador,
+		ac.NUM_EXPOSITORES as numExpositores,
+		ac.NUM_ASISTENTES as numAsistentes,
+		ac.NUM_SUPERFICIE as numSuperficie,
+		ac.HORARIO_ACTIVIDAD as horarioActividad,
+		ia.DES_ACTIVIDAD as descripcionActividad,
+		ia.DES_INFO_MERCADO as desInfoMercado,
+		ia.DES_VALORA_CUALI as desValoraCuali 
+	from 
+		VMCDBA.INF1INFORME_ACTIVIDAD ia,
+		TAGDBA.TAG1CIUDAD ci,
+		SRADBA.FS1ACTIVIDAD ac,
+		VMCDBA.INF8TIPO_ACTIVIDAD ta,
+		VMCDBA.DRC8SECTOR_NEGOCIO se,
+		TAGDBA.TAG1OCEX oc
+	where 
+		ia.ID_CIUDAD = ci.ID_CIUDAD
+		and ia.ID_PAIS = ci.ID_PAIS 
+		and ia.ID_ACTIVIDAD = ac.ID_ACTIVIDAD
+		and ac.ID_TIPO_ACTIVIDAD = ta.ID_TIPO_ACTIVIDAD
+		and ac.ID_SECTOR_NEGOCIO = se.ID_SECTOR_NEGOCIO
+		and oc.ID_OCEX = ia.ID_OCEX 
+		and ia.ID_INFORME_ACTIVIDAD = #idInformeActividad#
+  </select> 
+
+</sqlMap>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteInformeGestion" >
+
+  <typeAlias alias="ReporteInformeGestion" type="pe.gob.mincetur.informe.bean.ReporteInformeGestion" />
+	
+  <select id="getReporteInformeGestion" resultClass="ReporteInformeGestion" parameterClass="ReporteInformeGestion">
+	select 
+		ig.ID_OCEX as idOcex,
+		ig.NUM_PERIODO_TRIM as numPeriodoTrim,
+		ig.ID_INFORME_GESTION as idInformeGestion,
+		oc.DES_OCEX as desOcex,
+	    ig.ID_RECEPTOR_PERSONA as idReceptorPersona,
+	    ig.ID_RECEPTOR_OFICINA as idReceptorOficina,
+	    ig.DES_ASUNTO as desAsunto,
+	    ig.FEC_EMISION_INFORME as fecEmisionInforme,
+	    ig.DES_CUALIDAD_MERCADO as desCualidadMercado,
+	    ig.DES_CONCLUSIONES as desConclusiones,
+	    ig.DES_RECOMENDACIONES as desRecomendaciones 
+	from
+		VMCDBA.INF1INFORME_GESTION ig,
+		TAGDBA.TAG1OCEX oc
+	where 
+		ig.ID_OCEX = oc.ID_OCEX
+	    and ig.ID_INFORME_GESTION = #idInformeGestion#
+  </select> 
+
+</sqlMap>

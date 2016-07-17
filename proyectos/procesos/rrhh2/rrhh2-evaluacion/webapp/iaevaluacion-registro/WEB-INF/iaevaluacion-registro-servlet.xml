@@ -1,0 +1,53 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="jsonViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="order" value="1" />
+		<property name="location" value="/WEB-INF/iaevaluacion-registro-jsonview.xml" />
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	
+	<bean name="secureHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<props>
+<!-- 				<prop key="/Evaluacion.htm">/Evaluacion.htm</prop>	 -->
+<!-- 				<prop key="/Administracion.htm">/Administracion.htm</prop>	 -->
+				<!-- evaluacion devuelta -->
+				<prop key="/InformeReporte.htm">/InformeReporte.htm</prop>	
+			</props>
+		</property>
+	</bean>
+	
+
+	
+	
+	
+	<bean id="informeMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="action"/>
+		<property name="logicalMappings">
+			<props>
+				<prop key="iniciarInformeReporte">iniciarInformeReporte</prop>
+			</props>
+		</property>
+	</bean>	
+
+	<bean name="/InformeReporte.htm" 
+		class="pe.gob.mincetur.informe.web.controller.ReporteInformeController" scope="request">
+		<property name="methodNameResolver" ref="informeMethodNameResolver" />
+		<property name="jsonView" value="jsonView" />
+		<property name="reporteInformeService" ref="min2.informe.reporteInformeService" />
+	</bean>
+
+</beans>

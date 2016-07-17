@@ -1,0 +1,167 @@
+<project name="rrhh2-evaluacion" default="ear-gen" basedir=".">
+	
+	<!-- =================================================================== -->
+	<!-- Definicion de las propiedades			                 			 -->
+	<!-- =================================================================== -->
+	<property name="build.dir"  		value="${basedir}/build/"/>
+	<property name="classes.dir"  		value="${basedir}/build/classes"/>
+	<property name="java.lib.dir"   	value="D:/dev/libs" /> 							<!-- modificar según entorno -->
+	<property name="project.lib"  		value="${basedir}/build/lib"/>
+	<property name="webapp.dir"     	value="${basedir}/webapp" />
+	<property name="build.lib"  		value="${basedir}/build/templib"/>
+	<property name="impl.autor" 		value="ccaciquey"/>
+	<property name="impl.version" 		value="1.0.0"/>
+	<property name="wls103.deploy.dir" 	value="D:/bea10/user_projects/domains/Endor/autodeploy"/>
+	
+	 <tstamp>
+	 	<format property="fechahoy" pattern="dd/MM/yyyy HH:mm:ss"/>
+	 </tstamp>
+	
+	<!-- ================================================================= -->
+	<!-- Targets						   	       						   -->
+	<!-- ================================================================= -->
+	<target name="init" description="Inicializa el proyecto: limpia y crea las carpetas necesarias.">
+		<echo>Limpieza y creación de archivos...</echo>
+		<delete dir="${build.dir}/lib"/>
+		<delete>
+			<fileset dir="${build.dir}">
+			<include name="**/*.jar"/>
+			<include name="**/*.war"/>
+			<include name="**/*.ear"/>
+		</fileset>
+		</delete>
+		<mkdir dir="${basedir}/build"/>
+		<mkdir dir="${basedir}/build/lib"/>
+	</target>
+	
+  <!-- generador de la aplicacion 1 -->
+  <target name="iaevaluacion-registro-gen">
+    <jar jarfile="${build.dir}/iaevaluacion-registro.war" basedir="${webapp.dir}/iaevaluacion-registro">
+      <include name="**/*.htm" />
+      <include name="**/*.html" />
+      <include name="**/*.jsp" />
+      <include name="**/*.jasper" />
+      <include name="**/*.tld" />
+      <include name="WEB-INF/*.xml" />
+      <include name="js/*.js" />
+      <include name="css/*.css" />
+      <include name="**/*.png" />
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Specification-Title" value="Registro de Evaluación"/>
+        <attribute name="Specification-Version" value="${impl.version}"/>
+        <attribute name="Specification-Vendor" value="SUNAT - INSI"/>
+        <attribute name="Implementation-Title" value="Registro de Evaluación"/>
+        <attribute name="Implementation-Version" value="${impl.version}"/>
+        <attribute name="Implementation-Vendor" value="SUNAT - INSI"/>
+      </manifest>
+    </jar>
+  </target>
+ 	
+	
+  <!-- Generador del componente de registro evaluación -->
+  <target name="rrhh2-evaluacion-gen">
+    <tstamp>
+      <format property="TODAY" pattern="dd-MM-yyyy" />
+    </tstamp>
+  	
+    <jar jarfile="${project.lib}/rrhh2-evaluacion.jar" basedir="${build.lib}">
+      <fileset dir="${classes.dir}">
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/model/*.class" /> 
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/model/dao/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/model/dao/ibatis/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/model/dao/ibatis/maps/*.xml" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/service/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/bean/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/util/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/web/controller/*.class" />
+      	<include name="**/pe/gob/sunat/rrhh2/evaluacion/web/view/*.class" />
+      	
+      	
+      	<include name="**/pe/gob/mincetur/informe/model/*.class" /> 
+      	<include name="**/pe/gob/mincetur/informe/model/dao/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/model/dao/ibatis/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/model/dao/ibatis/maps/*.xml" />
+      	<include name="**/pe/gob/mincetur/informe/service/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/bean/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/util/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/web/controller/*.class" />
+      	<include name="**/pe/gob/mincetur/informe/web/view/*.class" />
+      </fileset>
+
+      <!--fileset dir="${classes.dir}/pe/gob/sunat/rrhh2/evaluacion/conf/">
+       	<include name="*.xml" />
+      	<include name="*.properties" />
+      </fileset-->
+        <fileset dir="${classes.dir}/pe/gob/mincetur/informe/conf/">
+         	<include name="*.xml" />
+        	<include name="*.properties" />
+        </fileset>
+
+      <manifest>
+      	<attribute name="Built-By" value="${user.name}"/>
+      	<attribute name="Specification-Title" value="Registro de Evaluación"/>
+      	<attribute name="Specification-Version" value="${impl.version}"/>
+      	<attribute name="Specification-Vendor" value="SUNAT - INSI"/>
+      	<attribute name="Implementation-Title" value="Registro de Evaluación"/>
+      	<attribute name="Implementation-Version" value="${impl.version}"/>
+      	<attribute name="Implementation-Vendor" value="SUNAT - INSI"/>
+      </manifest>
+    </jar>
+  </target>	
+
+  <target name="ear-gen" 
+  	depends="init,rrhh2-evaluacion-gen,iaevaluacion-registro-gen">
+    <copy todir="${project.lib}">
+      <fileset dir="${java.lib.dir}">
+      	<include name="rrhh2-evaluacion.jar" />
+        <include name="framework-util-1.6.jar" />
+      	<include name="framework-security-1.1.jar" />
+      	<include name="servicio-registro-model.jar" />
+      	<include name="framework-web-1.2.jar" />
+      	<include name="menu-test.jar" />
+      	<include name="framework-core-1.6.jar" />
+      	<include name="jfreechart-1.0.1.jar" />
+      	<include name="jcommon-1.0.0.jar" />
+      </fileset>  	
+ 	   <fileset dir="${java.lib.dir}/poi-3.9" >
+ 	    	<include name="poi-3.9-20121203.jar" />
+ 	    	<include name="poi-ooxml-3.9-20121203.jar" />
+ 	    	<include name="dom4j-1.6.1.jar" />
+ 	   		<include name="poi-ooxml-schemas-3.9-20121203.jar" />
+ 	   </fileset>
+    </copy>
+  	
+    <jar jarfile="${build.dir}/rrhh2-evaluacion.ear" basedir="${build.dir}">
+      <include name="iaevaluacion-registro.war" />
+   	  <include name="META-INF/*.xml" />
+      <include name="lib/rrhh2-evaluacion.jar" />
+      <include name="lib/framework-util-1.6.jar" />
+      <include name="lib/framework-security-1.1.jar" />
+      <include name="lib/servicio-registro-model.jar" />
+      <include name="lib/framework-web-1.2.jar" />
+      <include name="lib/menu-test.jar" />
+      <include name="lib/framework-core-1.6.jar" />
+      <include name="lib/jfreechart-1.0.1.jar" />
+      <include name="lib/jcommon-1.0.0.jar" />
+      <include name="lib/poi-3.9-20121203.jar" />
+      <include name="lib/poi-ooxml-3.9-20121203.jar" />
+      <include name="lib/dom4j-1.6.1.jar" />
+      <include name="lib/poi-ooxml-schemas-3.9-20121203.jar" />
+      <manifest>
+      		<attribute name="Built-By" value="${user.name}" />
+      		<attribute name="Developed-By" value="${impl.autor}" />
+			<attribute name="Specification-Title" value="Evaluación del Personal"/>
+      	    <attribute name="Extension-Name" value="rrhh2-evaluacion" />
+			<attribute name="Specification-Vendor" value="SUNAT - INSI"/>
+      		<attribute name="Weblogic-Application-Version" value="${impl.version}" />
+			<attribute name="Implementation-Title" value="Evaluación del Personal"/>
+      	    <attribute name="Implementation-Date" value="${fechahoy}" />
+			<attribute name="Implementation-Vendor" value="SUNAT - INSI"/>
+      </manifest>
+    </jar>
+  	<delete file="${wls103.deploy.dir}/rrhh2-evaluacion.ear"/>
+  	<copy file="${build.dir}/rrhh2-evaluacion.ear" todir="${wls103.deploy.dir}" />
+  </target>
+	
+</project>

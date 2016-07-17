@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	    http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<!-- ======================== Configuracion de los datasource =============== -->
+	<jee:jndi-lookup id="mincetur.informe.lectura" jndi-name="jdbc/dcmin" resource-ref="true" />
+	
+	<!-- ======================== SqlMap setup for iBATIS Database Layer =============== -->
+	<bean id="mincetur.informe.sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean"
+		p:configLocation="classpath:mincetur-informe-model-sql-map-config.xml"
+		p:dataSource-ref="mincetur.informe.lectura"/>
+
+    <bean id="mincetur.informe.daoBase" class="pe.gob.sunat.framework.spring.util.dao.SqlMapDAOBase"
+    	p:sqlMapClient-ref="mincetur.informe.sqlMapClient"/>
+	
+	<bean id="min2.reporteInformeGestionDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteInformeGestionDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteAccionPromocionDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteAccionPromocionDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteActividadDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteActividadDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteAlertaModificacionDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteAlertaModificacionDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteAtencionConsultaDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteAtencionConsultaDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteInformeActividadDAO" class="pe.gob.mincetur.informe.model.dao.ibatis.SqlMapReporteInformeActividadDAO" parent="mincetur.informe.daoBase"/>
+
+</beans>
+
+

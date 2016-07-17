@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://www.bea.com/ns/weblogic/weblogic-web-app"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://www.bea.com/ns/weblogic/weblogic-web-app http://www.bea.com/ns/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+
+	<wls:description>Evaluación del Desempeño</wls:description>
+	<wls:weblogic-version>10.3</wls:weblogic-version>
+
+	<wls:resource-description>
+		<wls:res-ref-name>jdbc/dcrecauda0j</wls:res-ref-name>
+		<wls:jndi-name>jdbc/dcrecauda0j</wls:jndi-name>
+	</wls:resource-description>
+	<wls:resource-description>
+		<wls:res-ref-name>jdbc/dgsp</wls:res-ref-name>
+		<wls:jndi-name>jdbc/dgsp</wls:jndi-name>
+	</wls:resource-description>
+	
+	<wls:resource-description>
+		<wls:res-ref-name>jdbc/dcbdseq</wls:res-ref-name>
+		<wls:jndi-name>jdbc/dcbdseq</wls:jndi-name>
+	</wls:resource-description>
+	
+	<wls:session-descriptor>	
+		<wls:tracking-enabled>true</wls:tracking-enabled>
+		<wls:cookie-name>IAEVALUARRHHSESSION</wls:cookie-name>
+		<wls:persistent-store-type>replicated_if_clustered</wls:persistent-store-type> 
+	</wls:session-descriptor>
+
+	<wls:jsp-descriptor>
+		<wls:keepgenerated>true</wls:keepgenerated>
+		<wls:print-nulls>false</wls:print-nulls>
+	</wls:jsp-descriptor>	
+	
+	<wls:container-descriptor>
+		<wls:session-monitoring-enabled>true</wls:session-monitoring-enabled>
+	</wls:container-descriptor>
+	
+</wls:weblogic-web-app>

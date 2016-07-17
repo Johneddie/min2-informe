@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PLANTILLA_INFGES" language="groovy" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="42" rightMargin="42" topMargin="30" bottomMargin="30">
+	<property name="ireport.zoom" value="1.3310000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nomAnio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nomDecenio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idInformeGestion" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desOcex" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desReceptorPersona" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desAsunto" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desFecEmisionInforme" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desReceptorOficina" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desCualidadMercado" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\PROYECTOS\\REPO_MINCETUR\\PLANTILLAS\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desConclusiones" class="java.lang.String"/>
+	<parameter name="desRecomendaciones" class="java.lang.String"/>
+	<parameter name="desTitPromocionExp" class="java.lang.String"/>
+	<parameter name="desTitPromocionTur" class="java.lang.String"/>
+	<parameter name="desTitPromocionInv" class="java.lang.String"/>
+	<parameter name="lstInfgeseRegacc" class="java.util.List"/>
+	<parameter name="lstInfgeseProage" class="java.util.List"/>
+	<parameter name="lstInfgeseAct" class="java.util.List"/>
+	<parameter name="lstInfgeseAtecon" class="java.util.List"/>
+	<parameter name="lstInfgestProage" class="java.util.List"/>
+	<parameter name="lstInfgestAct" class="java.util.List"/>
+	<parameter name="lstInfgestAtecon" class="java.util.List"/>
+	<parameter name="lstInfgesiProage" class="java.util.List"/>
+	<parameter name="lstInfgesiAct" class="java.util.List"/>
+	<parameter name="lstInfgesiAtecon" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="290" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="552" height="59"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\PROYECTOS\\REPO_MINCETUR\\PLANTILLAS\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="97" width="511" height="36"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Anexo Nº 04
+Formato de Informe de Gestión
+]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="74" width="511" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nomAnio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="59" width="511" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nomDecenio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="145" width="511" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["INFORME Nº "+($P{idInformeGestion}==null?"":$P{idInformeGestion})+"-2016-MINCETUR/DM/OCEX-"+($P{desOcex}==null?"":$P{desOcex})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="165" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Asunto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="255" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="165" width="18" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="220" width="18" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="255" width="18" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="118" y="165" width="393" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desReceptorPersona}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="118" y="185" width="393" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desReceptorOficina}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="118" y="220" width="393" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desAsunto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="118" y="255" width="393" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desFecEmisionInforme}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="281" width="511" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="474" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1. PROMOCIÓN DE EXPORTACIONES ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.1 CARACTERIZACIÓN DEL MERCADO DESTINO]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="10" y="40" width="501" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desCualidadMercado}]]></textFieldExpression>
+			</textField>
+			<subreport runToBottom="false">
+				<reportElement x="20" y="75" width="491" height="10"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgeseRegacc})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESE_REGACC.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="85" width="491" height="9"/>
+				<subreportParameter name="desTitPromocionExp">
+					<subreportParameterExpression><![CDATA[$P{desTitPromocionExp}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgeseProage})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESE_PROAGE.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="94" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.2 ACTIVIDADES DESARROLLADAS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="114" width="491" height="10"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgeseAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESE_ACT.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="124" width="491" height="9"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgeseAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESE_ACTRES.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="10" y="133" width="501" height="15"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgeseAtecon})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESE_ATECON.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="323" width="511" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4. CONCLUSIONES Y RECOMENDACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="343" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4.1 CONCLUSIONES]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="363" width="501" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desConclusiones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="401" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4.2 RECOMENDACIONES]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="421" width="501" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desRecomendaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="171" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2.1 ACTIVIDADES DESARROLLADAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="151" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2. PROMOCIÓN DE TURISMO]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="191" width="491" height="10"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgestAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGEST_ACT.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="201" width="491" height="9"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgestAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGEST_ACTRES.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="10" y="210" width="501" height="12"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgestAtecon})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGEST_ATECON.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="10" y="222" width="501" height="9"/>
+				<subreportParameter name="desTitPromocionTur">
+					<subreportParameterExpression><![CDATA[$P{desTitPromocionTur}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgestProage})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGEST_PROAGE.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="283" width="491" height="9"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgesiAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESI_ACTRES.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="20" y="273" width="491" height="10"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgesiAct})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESI_ACT.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="253" width="501" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.1 ACTIVIDADES DESARROLLADAS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" x="10" y="292" width="501" height="12"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgesiAtecon})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESI_ATECON.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="10" y="304" width="501" height="9"/>
+				<subreportParameter name="desTitPromocionInv">
+					<subreportParameterExpression><![CDATA[$P{desTitPromocionInv}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{lstInfgesiProage})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "PLANTILLA_INFGESI_PROAGE.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="233" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3. PROMOCIÓN DE INVERSIONES]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PLANTILLA1_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<field name="desTitulo" class="java.lang.String"/>
+	<field name="desCiudad" class="java.lang.String"/>
+	<field name="desFecActividad" class="java.lang.String"/>
+	<field name="desOtrosComent" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="491" height="20"/>
+				<textElement markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.1.1 DESCRIPCIÓN DE ACTIVIDADES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="139" splitType="Stretch">
+			<ellipse>
+				<reportElement x="10" y="12" width="3" height="3" backcolor="#000000"/>
+			</ellipse>
+			<textField isBlankWhenNull="true">
+				<reportElement x="22" y="8" width="468" height="35"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desTitulo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="43" width="98" height="20"/>
+				<textElement markup="none">
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Lugar de realización: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="63" width="98" height="20"/>
+				<textElement markup="none">
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de realización: ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="22" y="83" width="468" height="47"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Comentarios sobre la actividad: " + ($F{desOtrosComent}==null?"":$F{desOtrosComent})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="120" y="43" width="370" height="20"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desCiudad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="120" y="63" width="370" height="20"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desFecActividad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="10" splitType="Stretch"/>
+	</summary>
+</jasperReport>

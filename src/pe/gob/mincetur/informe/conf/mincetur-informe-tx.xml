@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/aop
+	    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<!-- ======================== Configuracion de la transaccionalidad =============== -->		
+<!--     <bean id="rrhh2.evaluacion.txManager" class="org.springframework.transaction.jta.WebLogicJtaTransactionManager" > -->
+<!--       <property name="transactionManagerName" value="javax.transaction.TransactionManager"/> -->
+<!--       <property name="defaultTimeout" value="900"/>    -->
+<!--     </bean> -->
+    
+<!--    	<aop:config> -->
+<!--   		<aop:pointcut id="rrhh2.evaluacion.default.pointcut"  -->
+<!--   		expression="execution(* pe.gob.sunat.rrhh2.evaluacion.service.EvaluacionServiceImpl.registrarEvaluacion(..)) or  -->
+<!--   					execution(* pe.gob.sunat.rrhh2.evaluacion.service.EvaluacionServiceImpl.registrarVerificacion(..))" />	 -->
+<!--   		<aop:advisor pointcut-ref="rrhh2.evaluacion.default.pointcut" advice-ref="rrhh2.evaluacion.txAdvice" order="1" /> -->
+<!-- 	</aop:config> -->
+		
+<!--  	<tx:advice id="rrhh2.evaluacion.txAdvice" transaction-manager="rrhh2.evaluacion.txManager"> -->
+<!--   		<tx:attributes> -->
+<!--   			<tx:method name="registrarEvaluacion" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/> -->
+<!--   			<tx:method name="registrarVerificacion" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/> -->
+<!--   		</tx:attributes> -->
+<!-- 	</tx:advice> -->
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- ========================= Definición de la persistencia en cache ======================== -->
+<!-- 	<import resource="classpath:cacheparamconfig.xml"/> -->
+	
+<!-- 	<bean id="rrhh2.paramDAOT01" class="pe.gob.sunat.framework.spring.util.cache2.dao.ParamDAO" -->
+<!-- 		init-method="loadParamNamePairs"> -->
+<!-- 		<property name="cacheProvider" ref="cacheProvider"/> -->
+<!-- 		<property name="paramLoader" ref="rrhh2.t01Def1"/> -->
+<!-- 		<property name="paramNamePairs"> -->
+<!-- 			<list> -->
+<!-- 			  	<value>001,recaudaprm001,1,notrim</value> -->
+<!-- 			  	Agregar aquí los parámetros que se necesiten -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="refreshPeriodParamCache" class="java.lang.Integer"> -->
+<!-- 		 <constructor-arg value="20" /> -->
+<!-- 	</bean> -->
+	
+</beans>

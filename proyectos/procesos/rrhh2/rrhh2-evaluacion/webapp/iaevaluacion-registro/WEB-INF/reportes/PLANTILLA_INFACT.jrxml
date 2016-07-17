@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PLANTILLA_INFACT" language="groovy" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="42" rightMargin="42" topMargin="30" bottomMargin="30">
+	<property name="ireport.zoom" value="1.2100000000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="284"/>
+	<parameter name="nomAnio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nomDecenio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idInformeActividad" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desOcex" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desReceptorPersona" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desAsunto" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desFecEmisionInforme" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desReceptorOficina" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\PROYECTOS\\REPO_MINCETUR\\PLANTILLAS\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="desConclusiones" class="java.lang.String"/>
+	<field name="desRecomendaciones" class="java.lang.String"/>
+	<field name="desAntecedentes" class="java.lang.String"/>
+	<field name="desObjetivoImport" class="java.lang.String"/>
+	<field name="desActividad" class="java.lang.String"/>
+	<field name="desTipoActividad" class="java.lang.String"/>
+	<field name="desFecActividad" class="java.lang.String"/>
+	<field name="desCiudad" class="java.lang.String"/>
+	<field name="desSectorNegocio" class="java.lang.String"/>
+	<field name="desProducto" class="java.lang.String"/>
+	<field name="desFrecuencia" class="java.lang.String"/>
+	<field name="desFundacion" class="java.lang.String"/>
+	<field name="desOrganizador" class="java.lang.String"/>
+	<field name="numExpositores" class="java.lang.String"/>
+	<field name="numAsistentes" class="java.lang.String"/>
+	<field name="numSuperficie" class="java.lang.String"/>
+	<field name="horarioActividad" class="java.lang.String"/>
+	<field name="descripcionActividad" class="java.lang.String"/>
+	<field name="desInfoMercado" class="java.lang.String"/>
+	<field name="desValoraCuali" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="771" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="552" height="59"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\PROYECTOS\\REPO_MINCETUR\\PLANTILLAS\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="97" width="511" height="36"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Anexo Nº 03
+Formato de Informe de Actividades
+]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="74" width="511" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nomAnio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="59" width="511" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nomDecenio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="145" width="511" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["INFORME Nº "+($P{idInformeActividad}==null?"":$P{idInformeActividad})+"-2016-MINCETUR/DM/OCEX-"+($P{desOcex}==null?"":$P{desOcex})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="165" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Asunto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="255" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="165" width="10" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="220" width="10" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="255" width="10" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="165" width="401" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desReceptorPersona}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="185" width="401" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desReceptorOficina}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="220" width="401" height="35"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desAsunto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="255" width="401" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{desFecEmisionInforme}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="281" width="511" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="292" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Antecedentes]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="10" y="312" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desAntecedentes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="344" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Objetivo e importancia de la participación]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="364" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desObjetivoImport}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="395" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Ficha Técnica de la Actividad]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="415" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desActividad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="415" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[a. Nombre de la actividad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="435" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[b. Tipo de actividad: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="455" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[c. Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="475" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[d. Lugar de realización]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="495" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[e. Sector]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="515" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[f. Productos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="535" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[g. Frecuencia*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="555" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[h. Año de fundación*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="575" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[i. Organizador*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="595" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[j. Número de expositores*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="655" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[m. Horario de la actividad*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="715" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[p. Web*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="615" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[k. Cantidad de asistentes*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="635" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[l. Superficie*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="675" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[n. Costo de la entrada*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="695" width="130" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[o. Fecha de Próxima Edición*]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="415" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="435" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="435" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desTipoActividad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="455" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desFecActividad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="475" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desCiudad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="455" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="475" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="495" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desSectorNegocio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="515" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desProducto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="495" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="515" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="535" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desFrecuencia}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="555" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desFundacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="535" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="555" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="695" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="655" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="655" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{horarioActividad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="715" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="675" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="635" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="615" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{numAsistentes}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="595" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{numExpositores}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="575" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desOrganizador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="575" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="145" y="635" width="366" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{numSuperficie}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="615" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="140" y="595" width="5" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="735" width="491" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[* Completar solo en el caso de actividad ferial (prospección o participación).]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="242" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV. Descripción de la actividad]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="20" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcionActividad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="48" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[V. Información del mercado obtenida en la actividad]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="68" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desInfoMercado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="97" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI. Resultados y valoración de la actividad]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="117" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desValoraCuali}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="145" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VII. Conclusiones]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="165" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desConclusiones}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="212" width="501" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desRecomendaciones}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="192" width="199" height="20"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIII. Recomendaciones]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

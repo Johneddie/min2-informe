@@ -1,0 +1,193 @@
+/*Grid need a explicit width/height by default*/
+#gridEvaluados {height: 250px;}
+
+.form-tableInsumos{
+	border: 1px solid #000000;
+	border-collapse: collapse;
+	margin-top: 5px;
+	font-family:verdana,arial,helvetica,sans-serif;
+}
+
+td.insumos {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+}
+
+.form-table-noborder{
+	border: none;
+	margin-top: 5px;
+	font-family:verdana,arial,helvetica,sans-serif;
+}
+
+TD.beta {background-color:#39c; font-size:7px;}
+TH.beta {background-color:#39c; font-size:7px;}
+		
+TR.gamma {background-color:#FFFFFF; font-size:7px;}
+TD.gamma {background-color:#FFFFFF; font-size:7px;}
+
+TR.gamma2 {background-color:#FFFFFF; font-size:8px;}
+TD.gamma2 {background-color:#FFFFFF; font-size:8px;}
+
+.T3{FONT-WEIGHT:900;FONT-SIZE:12px;background-color:#39c;COLOR:#000000;FONT-FAMILY: verdana, arial, helvetica, sans-serif;TEXT-DECORATION: none;text-align:center;}
+
+#preloader {
+			width:100%; height:100%; margin:0; padding:0;
+			background:#fff 
+  			url('/a/imagenes/wait-big.gif')
+  			no-repeat center center;
+  			position:absolute;
+  			z-index:999;
+}
+
+.limpiarIcon {    
+  		background: url(/a/imagenes/limpiar-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.admitirIcon {    
+  		background: url(/a/imagenes/admitir-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.regresarIcon {    
+  		background: url(/a/imagenes/devolver-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.guardarIcon {    
+    background: url(/a/imagenes/guardar-icon.png) no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.buscarIcon {    
+  		background: url(/a/imagenes/buscar-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.cancelarIcon {    
+  		background: url(/a/imagenes/cancelar-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.calificarIcon {    
+    background: url(/a/imagenes/calificar-icon.png) no-repeat;
+    width:16px;
+    height:16px;
+}
+
+.actividadesIcon {    
+  		background: url(/a/imagenes/edit.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+.establecimientoIcon {    
+  		background: url(/a/imagenes/establecimiento-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+.transporteIcon {    
+  		background: url(/a/imagenes/transporte-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+.bienFiscalizadoIcon {    
+  		background: url(/a/imagenes/bien-fiscalizado-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.agregarPresentacionIcon {    
+  		background: url(/a/imagenes/agregar-presentacion-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.agregarActividadIcon {     
+  		background: url(/a/imagenes/agregar-actividad-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.altaIcon {     
+  		background: url(/a/imagenes/agregar-actividad-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.imprimirIcon {     
+  		background: url(/a/imagenes/print-icon.png) no-repeat;
+  		width:16px;
+  		height:16px;
+}
+
+.continuarIcon {    
+	background: url(/a/imagenes/continuar-icon.png) no-repeat;
+	width:16px;
+	height:16px;
+}
+
+.thinButton .dijitButtonNode {
+		padding: 5px !important;	
+		width: 115px;
+		font-weight: bold;
+		text-align: center;
+		border-color:#424040;
+		color:#FFFFFF !important;
+		background:#4682b4 url(/a/js/dojo1.8/dijit/themes/claro/images/buttonHover.png) repeat-x bottom !important;
+	}
+
+	.thinButtonHover .dijitButtonNode {
+		border-color:#424040 !important;
+		border-bottom-color:#5c7590 !important;
+		font-weight: bold;
+		border-right-color:#5c7590 !important;
+		color:#000000 !important;
+		background:#FFFFFF url(/a/js/dojo1.8/dijit/themes/claro/images/buttonHover.png) repeat-x bottom !important;
+}
+
+.thinButtonActive .dijitButtonNode {
+	color:#FFFFFF !important;
+	border-color:#424040 !important;
+	font-weight: bold;
+	background: #4682b4 url(/a/js/dojo1.8/dijit/themes/claro/images/buttonActive.png) bottom repeat-x !important;
+}
+
+.thinButton3 .dijitButtonNode {
+	padding: 5px !important;	
+	width: 170px;
+	text-align: center;
+} 
+.thinButton3Hover .dijitButtonNode {
+	border-color:#a5beda !important;
+	border-bottom-color:#5c7590 !important;
+	border-right-color:#5c7590 !important;
+	color:#000 !important;
+	background:#fcfdff url(/a/js/dojo1.6/dijit/themes/tundra/images/buttonHover.png) repeat-x bottom !important;
+}
+.thinButton4Active .dijitButtonNode {
+	border-color:#366dba !important;
+	background: #ededed url(/a/js/dojo1.6/dijit/themes/tundra/images/buttonActive.png) bottom repeat-x !important;
+}
+
+.thinButton4 .dijitButtonNode {
+	padding: 5px !important;	
+	width: 210px;
+	text-align: center;
+} 
+.thinButton4Hover .dijitButtonNode {
+	border-color:#a5beda !important;
+	border-bottom-color:#5c7590 !important;
+	border-right-color:#5c7590 !important;
+	color:#000 !important;
+	background:#fcfdff url(/a/js/dojo1.6/dijit/themes/tundra/images/buttonHover.png) repeat-x bottom !important;
+}
+.thinButton4Active .dijitButtonNode {
+	border-color:#366dba !important;
+	background: #ededed url(/a/js/dojo1.6/dijit/themes/tundra/images/buttonActive.png) bottom repeat-x !important;
+}
