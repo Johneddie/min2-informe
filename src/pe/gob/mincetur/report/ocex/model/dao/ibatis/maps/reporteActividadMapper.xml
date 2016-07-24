@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteActividad" >
+
+  <typeAlias alias="ReporteActividad" type="pe.gob.mincetur.report.ocex.dto.ReporteActividadDto" />
+  <typeAlias alias="ReporteInformeGestion" type="pe.gob.mincetur.report.ocex.dto.ReporteInformeGestionDto" />
+	
+  <select id="lstReporteActividad" resultClass="ReporteActividad" parameterClass="ReporteInformeGestion">
+	select   
+		ac.DES_ACTIVIDAD as desActividad,
+		ci.DES_CIUDAD as desCiudad,
+		pa.DES_PAIS as desPais,
+		ia.FEC_INI_ACTIVIDAD as fecIniActividad,
+		ia.FEC_FIN_ACTIVIDAD as fecFinActividad,
+		ia.DES_OTROS_COMENT as desOtrosComent,
+		se.DES_SECTOR_NEGOCIO as desSectorNegocio,<!-- resumen -->
+		vc.NUM_EXPORTADORES as numExportadores,
+		vc.NUM_COMPRADORES as numCompradores,
+		vc.NUM_MONTO_PROY as numMontoProy 
+	from
+		VMCDBA.INF1INFORME_ACTIVIDAD ia,
+		TAGDBA.TAG1CIUDAD ci,
+		TAGDBA.TAG1PAIS pa,
+		SRADBA.FS1ACTIVIDAD ac,
+		VMCDBA.INF8TIPO_ACTIVIDAD tat,
+		VMCDBA.DRC8SECTOR_NEGOCIO se,
+		VMCDBA.INF2VALORA_CUANTI vc
+	where 
+		ia.ID_CIUDAD = ci.ID_CIUDAD
+		and ia.ID_PAIS = ci.ID_PAIS 
+		and ia.ID_PAIS = pa.ID_PAIS 
+		and ia.ID_ACTIVIDAD = ac.ID_ACTIVIDAD
+		and ia.ID_TIPO_ACTIVIDAD = tat.ID_TIPO_ACTIVIDAD
+		and ia.ID_SECTOR_NEGOCIO = se.ID_SECTOR_NEGOCIO
+		and ia.ID_INFORME_ACTIVIDAD = vc.ID_INFORME_ACTIVIDAD
+		and tat.ID_TIPO_ACCION = #idTipoAccion#
+		and ia.ID_OCEX = #idOcex#
+		and ia.NUM_PERIODO_TRIM = #numPeriodoTrim#
+	order by
+		ia.FEC_INI_ACTIVIDAD asc 
+  </select> 
+  
+
+</sqlMap>

@@ -44,7 +44,7 @@
 	</bean>	
 
 	<bean name="/InformeReporte.htm" 
-		class="pe.gob.mincetur.informe.web.controller.ReporteInformeController" scope="request">
+		class="pe.gob.mincetur.report.ocex.web.controller.ReporteInformeController" scope="request">
 		<property name="methodNameResolver" ref="informeMethodNameResolver" />
 		<property name="jsonView" value="jsonView" />
 		<property name="reporteInformeService" ref="min2.informe.reporteInformeService" />

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<!-- Identifica todos los ficheros de mapeos XML usados en SQL Map para cargar los mapeos SQL.
+		 Notese que las rutas son relativas al classpath. -->
+	<settings
+		cacheModelsEnabled="true"
+		enhancementEnabled="true"
+		useStatementNamespaces="true"
+		maxSessions="64"
+		maxTransactions="8"
+		maxRequests="128"/>
+	
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteInformeGestionMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAccionPromocionMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteActividadMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAlertaModificacionMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAtencionConsultaMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteInformeActividadMapper.xml"/>
+	
+</sqlMapConfig>

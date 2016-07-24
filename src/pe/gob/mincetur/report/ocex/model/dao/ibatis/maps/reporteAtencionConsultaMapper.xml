@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteAtencionConsulta" >
+
+  <typeAlias alias="ReporteAtencionConsulta" type="pe.gob.mincetur.report.ocex.dto.ReporteAtencionConsultaDto" />
+  <typeAlias alias="ReporteInformeGestion" type="pe.gob.mincetur.report.ocex.dto.ReporteInformeGestionDto" />
+	
+  <select id="lstReporteAtencionConsulta" resultClass="ReporteAtencionConsulta" parameterClass="ReporteInformeGestion">
+	select   
+		se.ID_SECTOR_NEGOCIO as idSectorNegocio,
+	    se.DES_SECTOR_NEGOCIO as desSectorNegocio,
+	    ts.ID_TIPO_SOLICITANTE as idTipoSolicitante,
+	    count(ts.ID_TIPO_SOLICITANTE) as numConsultas 
+	from
+		VMCDBA.INF1ATENCION_CONSULTA ac, 
+		VMCDBA.INF8TIPO_SOLICITANTE ts,
+		VMCDBA.DRC8SECTOR_NEGOCIO se
+	where 
+		ac.ID_SECTOR_NEGOCIO = se.ID_SECTOR_NEGOCIO
+		and ac.ID_TIPO_SOLICITANTE = ts.ID_TIPO_SOLICITANTE 
+		and ac.ID_OCEX = #idOcex#
+		and ac.NUM_PERIODO_TRIM = #numPeriodoTrim#
+		and  ts.ID_TIPO_SOLICITANTE = #idTipoSolicitante#
+	group by 
+		se.DES_SECTOR_NEGOCIO
+  </select> 
+
+</sqlMap>

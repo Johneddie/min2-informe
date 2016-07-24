@@ -3,7 +3,7 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
-	<bean id="jsonView" class="pe.gob.mincetur.informe.web.view.JsonView">
+	<bean id="jsonView" class="pe.gob.mincetur.report.ocex.web.view.JsonView">
 		<property name="contentType">
      	 	<value>text/plain;charset=utf-8</value>
     	</property>

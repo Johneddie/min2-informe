@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteAlertaModificacion" >
+
+  <typeAlias alias="ReporteAlertaModificacion" type="pe.gob.mincetur.report.ocex.dto.ReporteAlertaModificacionDto" />
+  <typeAlias alias="ReporteInformeGestion" type="pe.gob.mincetur.report.ocex.dto.ReporteInformeGestionDto" />
+	
+  <select id="lstReporteAlertaModificacion" resultClass="ReporteAlertaModificacion" parameterClass="ReporteInformeGestion">
+	select 
+	    am.DES_DENOM_NORMA as desDenomNorma,
+	    am.DES_NORMA as desNorma,
+	    am.FEC_PUBLICA_NORMA as fecPublicaNorma,
+	    am.FEC_INICIO_VIGENCIA as fecInicioVigencia,
+	    am.DES_ACC_REALIZADA as desAccRealizada,
+	    am.DES_ENLACE_NORMA as desEnlaceNorma
+	from
+		VMCDBA.INF1ALERTA_MODIFICACION am 
+	where 
+		am.ID_OCEX = #idOcex#
+		and am.NUM_PERIODO_TRIM = #numPeriodoTrim#
+  </select> 
+
+</sqlMap>

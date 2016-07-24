@@ -78,22 +78,22 @@
       	<include name="**/pe/gob/sunat/rrhh2/evaluacion/web/view/*.class" />
       	
       	
-      	<include name="**/pe/gob/mincetur/informe/model/*.class" /> 
-      	<include name="**/pe/gob/mincetur/informe/model/dao/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/model/dao/ibatis/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/model/dao/ibatis/maps/*.xml" />
-      	<include name="**/pe/gob/mincetur/informe/service/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/bean/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/util/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/web/controller/*.class" />
-      	<include name="**/pe/gob/mincetur/informe/web/view/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/model/*.class" /> 
+      	<include name="**/pe/gob/mincetur/report/ocex/model/dao/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/model/dao/ibatis/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/*.xml" />
+      	<include name="**/pe/gob/mincetur/report/ocex/service/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/dto/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/util/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/web/controller/*.class" />
+      	<include name="**/pe/gob/mincetur/report/ocex/web/view/*.class" />
       </fileset>
 
       <!--fileset dir="${classes.dir}/pe/gob/sunat/rrhh2/evaluacion/conf/">
        	<include name="*.xml" />
       	<include name="*.properties" />
       </fileset-->
-        <fileset dir="${classes.dir}/pe/gob/mincetur/informe/conf/">
+        <fileset dir="${classes.dir}/pe/gob/mincetur/report/ocex/conf/">
          	<include name="*.xml" />
         	<include name="*.properties" />
         </fileset>
