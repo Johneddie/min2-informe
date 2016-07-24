@@ -22,6 +22,7 @@ public class ReporteInformeActividad {
     private Date fecFinActividad;
     private Date desFecActividad;
     private String desCiudad;
+    private String desPais;
     private String desSectorNegocio;
     private String desProducto;
     private String desFrecuencia;
@@ -29,11 +30,14 @@ public class ReporteInformeActividad {
     private String desOrganizador;
     private Integer numExpositores;
     private Integer numAsistentes;
-    private Integer numSuperficie;
+    private Double numSuperficie;
     private String horarioActividad;
     private String descripcionActividad;
     private String desInfoMercado;
     private String desValoraCuali;
+    private Double numValEntrada;
+    private Date fecProxEdicion;
+    private String desFecProxEdicion;
     
 	public Integer getIdInformeActividad() {
 		return idInformeActividad;
@@ -167,12 +171,6 @@ public class ReporteInformeActividad {
 	public void setNumAsistentes(Integer numAsistentes) {
 		this.numAsistentes = numAsistentes;
 	}
-	public Integer getNumSuperficie() {
-		return numSuperficie;
-	}
-	public void setNumSuperficie(Integer numSuperficie) {
-		this.numSuperficie = numSuperficie;
-	}
 	public String getHorarioActividad() {
 		return horarioActividad;
 	}
@@ -214,6 +212,36 @@ public class ReporteInformeActividad {
 	}
 	public void setDesFecActividad(Date desFecActividad) {
 		this.desFecActividad = desFecActividad;
+	}
+	public Double getNumSuperficie() {
+		return numSuperficie;
+	}
+	public void setNumSuperficie(Double numSuperficie) {
+		this.numSuperficie = numSuperficie;
+	}
+	public Double getNumValEntrada() {
+		return numValEntrada;
+	}
+	public void setNumValEntrada(Double numValEntrada) {
+		this.numValEntrada = numValEntrada;
+	}
+	public Date getFecProxEdicion() {
+		return fecProxEdicion;
+	}
+	public void setFecProxEdicion(Date fecProxEdicion) {
+		this.fecProxEdicion = fecProxEdicion;
+	}
+	public String getDesFecProxEdicion() {
+		return desFecProxEdicion;
+	}
+	public void setDesFecProxEdicion(String desFecProxEdicion) {
+		this.desFecProxEdicion = desFecProxEdicion;
+	}
+	public String getDesPais() {
+		return desPais;
+	}
+	public void setDesPais(String desPais) {
+		this.desPais = desPais;
 	}
    
 }

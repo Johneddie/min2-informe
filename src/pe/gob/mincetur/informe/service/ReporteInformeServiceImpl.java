@@ -236,6 +236,7 @@ public class ReporteInformeServiceImpl implements ReporteInformeService{
 			hmReporteInformeActividad.put("desReceptorOficina", ""+informeActividad.getIdReceptorOficina());
 			hmReporteInformeActividad.put("desAsunto", informeActividad.getDesAsunto());
 			hmReporteInformeActividad.put("desFecEmisionInforme", Utils.convertDateToWords(informeActividad.getFecEmisionInforme()));
+			hmReporteInformeActividad.put("desFecProxEdicion", Utils.convertDateToWords(informeActividad.getFecProxEdicion()));
 		}
 		hmReporteInformeActividad.put("nomDecenio", "Decenio de las Personas con Discapacidad en el Perú");
 		hmReporteInformeActividad.put("nomAnio", "Año de la Consolidación del Mar de Grau");

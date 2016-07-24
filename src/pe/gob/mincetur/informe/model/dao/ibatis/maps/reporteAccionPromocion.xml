@@ -11,11 +11,14 @@
 	    ap.DES_ACC_PROMOCION as desAccPromocion,
 	    ap.DES_PUBLICO_OBJ as desPublicoObj,
 	    ap.DES_FORM_ACTIV as desFormActiv,
-	    ap.DES_PRODUCTO_REL as desProductoRel 
+	    ap.DES_PRODUCTO_REL as desProductoRel,
+	    pa.DES_PAIS as desPais  
 	from
-		VMCDBA.INF1ACCION_PROMOCION ap 
+		VMCDBA.INF1ACCION_PROMOCION ap,
+		TAGDBA.TAG1PAIS pa 
 	where 
 		ap.ID_OCEX = #idOcex#
+		and ap.ID_PAIS = pa.ID_PAIS 
 		and ap.NUM_PERIODO_TRIM = #numPeriodoTrim#
 		and ap.ID_TIPO_ACCION = #idTipoAccion#
   </select> 

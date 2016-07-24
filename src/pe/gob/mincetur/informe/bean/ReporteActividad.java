@@ -4,8 +4,9 @@ import java.util.Date;
 
 public class ReporteActividad {
 
-    private String desTitulo;
+    private String desActividad;
     private String desCiudad;
+    private String desPais;
     private Date fecIniActividad;
     private Date fecFinActividad;
     private String desFecActividad;
@@ -15,11 +16,11 @@ public class ReporteActividad {
     private Integer numCompradores;
     private Integer numMontoProy;
     
-	public String getDesTitulo() {
-		return desTitulo;
+	public String getDesActividad() {
+		return desActividad;
 	}
-	public void setDesTitulo(String desTitulo) {
-		this.desTitulo = desTitulo;
+	public void setDesActividad(String desActividad) {
+		this.desActividad = desActividad;
 	}
 	public String getDesCiudad() {
 		return desCiudad;
@@ -75,5 +76,10 @@ public class ReporteActividad {
 	public void setNumMontoProy(Integer numMontoProy) {
 		this.numMontoProy = numMontoProy;
 	}
-    
+	public String getDesPais() {
+		return desPais;
+	}
+	public void setDesPais(String desPais) {
+		this.desPais = desPais;
+	}
 }

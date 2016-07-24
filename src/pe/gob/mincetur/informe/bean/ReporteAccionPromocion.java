@@ -7,6 +7,7 @@ public class ReporteAccionPromocion {
     private String desPublicoObj;
     private String desFormActiv;
     private String desProductoRel;
+    private String desPais;
     
 	public String getDesAgenPromotora() {
 		return desAgenPromotora;
@@ -37,6 +38,12 @@ public class ReporteAccionPromocion {
 	}
 	public void setDesProductoRel(String desProductoRel) {
 		this.desProductoRel = desProductoRel;
+	}
+	public String getDesPais() {
+		return desPais;
+	}
+	public void setDesPais(String desPais) {
+		this.desPais = desPais;
 	}
     
 }
