@@ -22,7 +22,9 @@
 		and ac.NUM_PERIODO_TRIM = #numPeriodoTrim#
 		and  ts.ID_TIPO_SOLICITANTE = #idTipoSolicitante#
 	group by 
-		se.DES_SECTOR_NEGOCIO
+        se.ID_SECTOR_NEGOCIO,
+        se.DES_SECTOR_NEGOCIO,
+        ts.ID_TIPO_SOLICITANTE
   </select> 
 
 </sqlMap>
