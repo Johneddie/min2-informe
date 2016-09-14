@@ -16,7 +16,11 @@
 	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAccionPromocionMapper.xml"/>
 	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteActividadMapper.xml"/>
 	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAlertaModificacionMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAlertaParticipacionMapper.xml"/>
 	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteAtencionConsultaMapper.xml"/>
 	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteInformeActividadMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reporteFichaMercadoMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reportePerfilInversionistaMapper.xml"/>
+	<sqlMap resource="pe/gob/mincetur/report/ocex/model/dao/ibatis/maps/reportePrecioProductoMapper.xml"/>
 	
 </sqlMapConfig>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reportePerfilInversionista" >
+
+  <typeAlias alias="ReportePerfilInversionista" type="pe.gob.mincetur.report.ocex.dto.ReportePerfilInversionistaDto" />
+	
+  <select id="getReportePerfilInversionista" resultClass="ReportePerfilInversionista" parameterClass="ReportePerfilInversionista">
+	select 
+		vd.RAZON_SOCIAL		   		as razonSocial,
+        vd.NOMBRE_COMERCIAL    		as nombreComercial,
+        vd.OPE_DES_AREA_OPERACION 	as opeDesAreaOperacion,
+        vd.DOM_DES_PAIS 			as domDesPais,
+        vd.DOM_DES_CIUDAD			as domDesCiudad,
+        vd.DOM_DES_ZONA				as domDesZona,
+        vd.DOM_NOM_ZONA				as domDesNomZona,
+        vd.DOM_DES_VIA				as domDesVia,
+        vd.DOM_NOM_VIA				as domNomVia,
+        vd.DOM_NUMERO				as domNumero,
+        vd.TLF_NUMERO				as tlfNumero,
+        vd.CONT_DES_CORREO_WEB		as contDesCorreoWeb,
+        vd.CTO_NOMBRECOMPLETO 		as ctoNombreCompleto,
+        vd.CTO_DES_CARGO			as ctoDesCargo,
+        vd.CTO_TLF_NUMERO			as ctoTlfNumero,
+        vd.CTO_CONT_DES_CORREO_WEB	as ctoContDesCorreoWeb,
+		pi.ID_PERFIL           		as idPerfilInversionista,
+		pi.ID_OCEX             		as idOcex,
+		pi.NUM_PERIODO_TRIM    		as numPeriodoTrim,
+		pi.DES_INVER_PAIS      		as desInverPais,
+		pi.DES_INVER_PERU      		as desInverPeru,
+		pi.DES_INVER_MUNDO     		as desInverMundo,
+		pi.DES_MOTIVA_ELECCION 		as desMotivaEleccion,
+		pi.DES_CRITERIOS_PRIOR 		as desCriteriosPrior,
+		pi.FLG_VISITADO_PERU   		as flgVisitadoPeru,
+        pi.COD_MOTIVO_VISITA   		as codMotivoVisita,
+		pi.DES_MOTIVO_VISITA   		as desMotivoVisita,
+        pi.COD_OFERTA_TURIST   		as codOfertaTurist,
+        pi.FLG_OPORT_INVER     		as flgOportInver,
+        pi.DES_OPORT_INVER     		as desOportInver,
+		pi.COD_MAS_INFORMA     		as codMasInforma,
+		pi.DES_MAS_INFORMA     		as desMasInforma,
+        pi.COD_TIPO_REALIZAR   		as codTipoRealizar,
+		pi.DES_TIPO_REALIZAR   		as desTipoRealizar,
+		pi.COD_MONTO_REALIZAR  		as codMontoRealizar,
+		pi.NUM_PERIODO_TRIM 		as numPeriodoTrim,
+	    pi.FEC_CREA 				as fecCrea,
+	    oc.DES_OCEX             	as desOcex
+	from 
+		VMCDBA.INF1PERFIL_INVERS pi,
+		TAGDBA.TAG1OCEX oc,
+        VMCDBA.INF7PERFIL_INVERS_DIRE pd,
+        VMCDBA.VI_DRC1DIRECTORIO vd
+	where 
+		pi.ID_OCEX = oc.ID_OCEX
+		and pi.ID_PERFIL = pd.ID_PERFIL
+        and pd.ID_DIRECTORIO = vd.ID_DIRECTORIO
+		and pi.ID_PERFIL = #idPerfilInversionista#
+	    and pi.ID_OCEX = #idOcex#
+  </select> 
+  
+
+</sqlMap>

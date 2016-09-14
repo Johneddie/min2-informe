@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reportePrecioProducto" >
+
+  <typeAlias alias="ReportePrecioProducto" type="pe.gob.mincetur.report.ocex.dto.ReportePrecioProductoDto" />
+	
+  <select id="lstReportePrecioProductoByFicha" resultClass="ReportePrecioProducto" parameterClass="ReportePrecioProducto">
+	select 
+		pp.ID_PRECIO as idPrecioProducto,
+		pp.ID_FICHA as idFichaMercado,
+	    pp.ID_OCEX as idOcex,
+		pp.DES_CANAL as desCanal,
+	    pp.DES_UNIDAD as desUnidad,
+	    pp.NUM_PRECIO as numPrecio,
+		pp.DES_ORIGEN as desOrigen,
+		pp.FEC_TOMA_DATOS as fecTomaDatos,
+		TO_CHAR(pp.FEC_TOMA_DATOS, 'DD/MM/YYYY') as desFecTomaDatos,
+		pp.DES_CARACTERISTICAS as desCaracteristicas,
+		pp.COD_FOTO as codFoto 
+	from 
+		VMCDBA.INF2PRECIO_PRODUCTO pp
+	where 
+		pp.ID_FICHA = #idFichaMercado#
+	    and pp.ID_OCEX = #idOcex#
+  </select> 
+  
+</sqlMap>

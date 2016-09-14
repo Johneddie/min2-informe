@@ -20,7 +20,30 @@
 		ap.ID_OCEX = #idOcex#
 		and ap.ID_PAIS = pa.ID_PAIS 
 		and ap.NUM_PERIODO_TRIM = #numPeriodoTrim#
-		and ap.ID_TIPO_ACCION = #idTipoAccion#
+		<isNotNull property="idTipoAccion">and ap.ID_TIPO_ACCION = #idTipoAccion#</isNotNull>
+  </select> 
+  
+   <select id="getReporteAccionPromocion" resultClass="ReporteAccionPromocion" parameterClass="ReporteAccionPromocion">
+	select 
+		oc.DES_OCEX as desOcex,  
+	    ap.DES_AGEN_PROMOTORA as desAgenPromotora,
+	    ap.DES_ACC_PROMOCION as desAccPromocion,
+	    ap.DES_PUBLICO_OBJ as desPublicoObj,
+	    ap.DES_FORM_ACTIV as desFormActiv,
+	    ap.DES_PRODUCTO_REL as desProductoRel,
+	    pa.DES_PAIS as desPais,  
+	    ap.NUM_PERIODO_TRIM as numPeriodoTrim,
+	    ap.FEC_CREA as fecCrea 
+	from
+		VMCDBA.INF1ACCION_PROMOCION ap,
+		TAGDBA.TAG1PAIS pa,
+		TAGDBA.TAG1OCEX oc 
+	where 
+		ap.ID_OCEX = oc.ID_OCEX
+		and ap.ID_PAIS = pa.ID_PAIS 
+		and ap.ID_OCEX = #idOcex#
+		and ap.ID_ACCION_PROMOCION = #idAccionPromocion#
+		
   </select> 
 
 </sqlMap>

@@ -16,4 +16,8 @@ public class SqlMapReporteAtencionConsultaDAO extends SqlMapClientDaoSupport imp
 		return (List<ReporteAtencionConsultaDto>)getSqlMapClientTemplate().queryForList("reporteAtencionConsulta.lstReporteAtencionConsulta", params);
 	}
 	
+	@Override
+	public ReporteAtencionConsultaDto obtenerReporteAtencionConsulta(ReporteAtencionConsultaDto params){
+		return (ReporteAtencionConsultaDto)getSqlMapClientTemplate().queryForObject("reporteAtencionConsulta.getReporteAtencionConsulta", params);
+	}
 }

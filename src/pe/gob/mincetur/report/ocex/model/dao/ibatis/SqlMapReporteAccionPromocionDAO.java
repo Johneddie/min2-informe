@@ -16,4 +16,9 @@ public class SqlMapReporteAccionPromocionDAO extends SqlMapClientDaoSupport impl
 		return (List<ReporteAccionPromocionDto>)getSqlMapClientTemplate().queryForList("reporteAccionPromocion.lstReporteAccionPromocion", params);
 	}
 	
+	@Override
+	public ReporteAccionPromocionDto obtenerReporteAccionPromocion(ReporteAccionPromocionDto params){
+		return (ReporteAccionPromocionDto)getSqlMapClientTemplate().queryForObject("reporteAccionPromocion.getReporteAccionPromocion", params);
+	}
+	
 }

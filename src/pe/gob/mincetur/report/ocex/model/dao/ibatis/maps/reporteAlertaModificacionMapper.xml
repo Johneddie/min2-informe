@@ -19,5 +19,26 @@
 		am.ID_OCEX = #idOcex#
 		and am.NUM_PERIODO_TRIM = #numPeriodoTrim#
   </select> 
+  
+  <select id="getReporteAlertaModificacion" resultClass="ReporteAlertaModificacion" parameterClass="ReporteAlertaModificacion">
+	select 
+		oc.DES_OCEX as desOcex,
+	    am.DES_DENOM_NORMA as desDenomNorma,
+	    am.DES_NORMA as desNorma,
+	    am.FEC_PUBLICA_NORMA as fecPublicaNorma,
+	    am.FEC_INICIO_VIGENCIA as fecInicioVigencia,
+	    am.DES_ACC_REALIZADA as desAccRealizada,
+	    am.DES_ENLACE_NORMA as desEnlaceNorma,
+	    am.NUM_PERIODO_TRIM as numPeriodoTrim,
+	    am.FEC_CREA as fecCrea 
+	from
+		VMCDBA.INF1ALERTA_MODIFICACION am,
+		TAGDBA.TAG1OCEX oc  
+	where 
+		am.ID_OCEX = oc.ID_OCEX
+		and am.ID_OCEX = #idOcex#
+		and am.ID_ALERTA_MODIFICACI = #idAlertaModificacion#
+		
+  </select> 
 
 </sqlMap>

@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Evaluaci&oacute;n del Desempe&ntilde;o Laboral</title>	
+	<title>Reportes Test</title>	
 	<script language="JavaScript" type="text/javascript">
 		var CONTEXTO_APP = "${pageContext.request.contextPath}";
 	</script> 
@@ -201,6 +201,30 @@
 												<div class="col-md-8 lbl-name">Informe de actividad: </div>
 												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarInfAct"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
 											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Alerta de Modificación: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarAlertaModificacion"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Acción de Promoción: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarAccionPromocion"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Alerta de Participación: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarAlertaParticipacion"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Ficha de Mercado: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarFichaMercado"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Atención de Consulta: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarAtencionConsulta"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
+											<div class="form-group col-md-12">
+												<div class="col-md-8 lbl-name">Perfil de Inversionista: </div>
+												<div class="col-md-3"><button type="button" class="btn btn-primary btn-padding" id="btnExportarPerfilInversionista"><i class="fa fa-file-pdf-o"></i> Exportar</button></div>
+											</div>
 
 										</div>
 									</fieldset>
@@ -223,6 +247,13 @@
 		<input type="hidden" name="idInformeActividad" value="">
 		<input type="hidden" name="numPeriodoTrim" value="">
 		<input type="hidden" name="action" value=""/>
+		
+		<input type="hidden" name="idAlertaModificacion" value="">
+		<input type="hidden" name="idAccionPromocion" value="">
+		<input type="hidden" name="idAlertaParticipacion" value="">
+		<input type="hidden" name="idFichaMercado" value="">
+		<input type="hidden" name="idAtencionConsulta" value="">
+		<input type="hidden" name="idPerfilInversionista" value="">
 	</form>
 	
 	<script src="../a/js/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -237,6 +268,13 @@
     	settings();
     	$(document).on("click", "#btnExportarInfGes", function(){ exportarInfGes(this); });
     	$(document).on("click", "#btnExportarInfAct", function(){ exportarInfAct(this); });
+    	$(document).on("click", "#btnExportarAlertaModificacion", function(){ exportarAlertaModificacion(this); });
+    	$(document).on("click", "#btnExportarAccionPromocion", function(){ exportarAccionPromocion(this); });
+    	$(document).on("click", "#btnExportarAlertaParticipacion", function(){ exportarAlertaParticipacion(this); });
+    	$(document).on("click", "#btnExportarAtencionConsulta", function(){ exportarAtencionConsulta(this); });
+    	$(document).on("click", "#btnExportarPerfilInversionista", function(){ exportarPerfilInversionista(this); });
+    	$(document).on("click", "#btnExportarFichaMercado", function(){ exportarFichaMercado(this); });
+    	
     });
     
 	var settings = function(){
@@ -259,6 +297,42 @@
 		//document.frmExportar.idOcex.value = "01";
 		//document.frmExportar.numPeriodoTrim.value = "201603";
 		document.frmExportar.action.value = "descargarInformeActividadPdf";
+		document.frmExportar.submit();
+	}
+	function exportarAlertaModificacion(element){
+		document.frmExportar.idAlertaModificacion.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarAlertaModificacionPdf";
+		document.frmExportar.submit();
+	}
+	function exportarAccionPromocion(element){
+		document.frmExportar.idAccionPromocion.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarAccionPromocionPdf";
+		document.frmExportar.submit();
+	}
+	function exportarAlertaParticipacion(element){
+		document.frmExportar.idAlertaParticipacion.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarAlertaParticipacionPdf";
+		document.frmExportar.submit();
+	}
+	function exportarFichaMercado(element){
+		document.frmExportar.idFichaMercado.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarFichaMercadoPdf";
+		document.frmExportar.submit();
+	}
+	function exportarAtencionConsulta(element){
+		document.frmExportar.idAtencionConsulta.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarAtencionConsultaPdf";
+		document.frmExportar.submit();
+	}
+	function exportarPerfilInversionista(element){
+		document.frmExportar.idPerfilInversionista.value = "1";
+		document.frmExportar.idOcex.value = "1";
+		document.frmExportar.action.value = "descargarPerfilInversionistaPdf";
 		document.frmExportar.submit();
 	}
 

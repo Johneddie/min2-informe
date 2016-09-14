@@ -8,5 +8,7 @@ import pe.gob.mincetur.report.ocex.dto.ReporteInformeGestionDto;
 public interface ReporteAtencionConsultaDAO {
 
 	List<ReporteAtencionConsultaDto> listarReporteAtencionConsulta(ReporteInformeGestionDto params);
+	
+	ReporteAtencionConsultaDto obtenerReporteAtencionConsulta(ReporteAtencionConsultaDto params);
 
 }

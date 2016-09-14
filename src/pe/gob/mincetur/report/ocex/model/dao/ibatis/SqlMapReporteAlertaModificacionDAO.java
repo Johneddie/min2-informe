@@ -16,4 +16,9 @@ public class SqlMapReporteAlertaModificacionDAO extends SqlMapClientDaoSupport i
 		return (List<ReporteAlertaModificacionDto>)getSqlMapClientTemplate().queryForList("reporteAlertaModificacion.lstReporteAlertaModificacion", params);
 	}
 	
+	@Override
+	public ReporteAlertaModificacionDto obtenerReporteAlertaModificacion(ReporteAlertaModificacionDto params){
+		return (ReporteAlertaModificacionDto)getSqlMapClientTemplate().queryForObject("reporteAlertaModificacion.getReporteAlertaModificacion", params);
+	}
+	
 }

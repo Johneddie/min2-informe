@@ -13,14 +13,26 @@
 	<import resource="classpath*:mincetur-informe-util.xml" />
 	<import resource="classpath*:mincetur-informe-tx.xml" />
 		
-	
+	<bean id="reporte.Propiedades" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	  <property name="locations">
+	    <list>
+	      <value>classpath*:report.properties</value>
+	    </list>
+	  </property>
+	</bean>
+
 	<bean id="min2.informe.reporteInformeService" class="pe.gob.mincetur.report.ocex.service.ReporteInformeServiceImpl">
    		<property name="reporteInformeGestionDAO" ref="min2.reporteInformeGestionDAO"/>
    		<property name="reporteAccionPromocionDAO" ref="min2.reporteAccionPromocionDAO"/>
    		<property name="reporteActividadDAO" ref="min2.reporteActividadDAO"/>
    		<property name="reporteAlertaModificacionDAO" ref="min2.reporteAlertaModificacionDAO"/>
+   		<property name="reporteAlertaParticipacionDAO" ref="min2.reporteAlertaParticipacionDAO"/>
    		<property name="reporteAtencionConsultaDAO" ref="min2.reporteAtencionConsultaDAO"/>
    		<property name="reporteInformeActividadDAO" ref="min2.reporteInformeActividadDAO"/>
+   		<property name="reporteFichaMercadoDAO" ref="min2.reporteFichaMercadoDAO"/>
+   		<property name="reportePerfilInversionistaDAO" ref="min2.reportePerfilInversionistaDAO"/>
+   		<property name="reportePrecioProductoDAO" ref="min2.reportePrecioProductoDAO"/>
+   		<property name="propiedades" ref="reporte.Propiedades"/>
 	</bean>
 	
     

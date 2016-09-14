@@ -32,8 +32,12 @@
 	<bean id="min2.reporteAccionPromocionDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteAccionPromocionDAO" parent="mincetur.informe.daoBase"/>
 	<bean id="min2.reporteActividadDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteActividadDAO" parent="mincetur.informe.daoBase"/>
 	<bean id="min2.reporteAlertaModificacionDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteAlertaModificacionDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteAlertaParticipacionDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteAlertaParticipacionDAO" parent="mincetur.informe.daoBase"/>
 	<bean id="min2.reporteAtencionConsultaDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteAtencionConsultaDAO" parent="mincetur.informe.daoBase"/>
 	<bean id="min2.reporteInformeActividadDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteInformeActividadDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reporteFichaMercadoDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReporteFichaMercadoDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reportePerfilInversionistaDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReportePerfilInversionistaDAO" parent="mincetur.informe.daoBase"/>
+	<bean id="min2.reportePrecioProductoDAO" class="pe.gob.mincetur.report.ocex.model.dao.ibatis.SqlMapReportePrecioProductoDAO" parent="mincetur.informe.daoBase"/>
 
 </beans>
 

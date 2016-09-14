@@ -3,7 +3,12 @@ package pe.gob.mincetur.report.ocex.dto;
 import java.util.Date;
 
 public class ReporteAlertaModificacionDto {
-
+	
+	private Integer idAlertaModificacion;
+	private Integer idOcex;
+	private String desOcex;
+	private Integer idEstadoInforme;
+	
     private String desDenomNorma;
     private String desNorma;
     private Date fecPublicaNorma;
@@ -12,6 +17,10 @@ public class ReporteAlertaModificacionDto {
     private String desFecInicioVigencia;
     private String desAccRealizada;
     private String desEnlaceNorma;
+    
+    private Integer numPeriodoTrim;
+    private Date fecCrea;
+    private String desFecCrea;
     
 	public String getDesDenomNorma() {
 		return desDenomNorma;
@@ -60,6 +69,48 @@ public class ReporteAlertaModificacionDto {
 	}
 	public void setDesEnlaceNorma(String desEnlaceNorma) {
 		this.desEnlaceNorma = desEnlaceNorma;
+	}
+	public Integer getIdAlertaModificacion() {
+		return idAlertaModificacion;
+	}
+	public void setIdAlertaModificacion(Integer idAlertaModificacion) {
+		this.idAlertaModificacion = idAlertaModificacion;
+	}
+	public Integer getIdOcex() {
+		return idOcex;
+	}
+	public void setIdOcex(Integer idOcex) {
+		this.idOcex = idOcex;
+	}
+	public Integer getIdEstadoInforme() {
+		return idEstadoInforme;
+	}
+	public void setIdEstadoInforme(Integer idEstadoInforme) {
+		this.idEstadoInforme = idEstadoInforme;
+	}
+	public String getDesOcex() {
+		return desOcex;
+	}
+	public void setDesOcex(String desOcex) {
+		this.desOcex = desOcex;
+	}
+	public Integer getNumPeriodoTrim() {
+		return numPeriodoTrim;
+	}
+	public void setNumPeriodoTrim(Integer numPeriodoTrim) {
+		this.numPeriodoTrim = numPeriodoTrim;
+	}
+	public Date getFecCrea() {
+		return fecCrea;
+	}
+	public void setFecCrea(Date fecCrea) {
+		this.fecCrea = fecCrea;
+	}
+	public String getDesFecCrea() {
+		return desFecCrea;
+	}
+	public void setDesFecCrea(String desFecCrea) {
+		this.desFecCrea = desFecCrea;
 	}
     
 }

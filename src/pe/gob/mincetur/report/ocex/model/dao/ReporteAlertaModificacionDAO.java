@@ -9,5 +9,7 @@ import pe.gob.mincetur.report.ocex.dto.ReporteInformeGestionDto;
 public interface ReporteAlertaModificacionDAO {
 
 	List<ReporteAlertaModificacionDto> listarReporteAlertaModificacion(ReporteInformeGestionDto params);
+	
+	ReporteAlertaModificacionDto obtenerReporteAlertaModificacion(ReporteAlertaModificacionDto params);
 
 }

@@ -46,6 +46,7 @@
       <include name="js/*.js" />
       <include name="css/*.css" />
       <include name="**/*.png" />
+      <include name="**/*.jpg" />
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Specification-Title" value="Registro de Evaluación"/>

@@ -26,5 +26,31 @@
         se.DES_SECTOR_NEGOCIO,
         ts.ID_TIPO_SOLICITANTE
   </select> 
+  
+  <select id="getReporteAtencionConsulta" resultClass="ReporteAtencionConsulta" parameterClass="ReporteAtencionConsulta">
+	select 
+		oc.DES_OCEX as desOcex,
+		se.DES_SECTOR_NEGOCIO as desSectorNegocio,
+		so.DES_TIPO_SOLICITANTE as desTipoSolicitante,
+		at.DES_EMPRESA as desEmpresa,
+		at.DES_CONTACTO as desContacto,
+		at.DES_CORREO as desCorreo,
+		at.DES_TELEFONO as desTelefono,
+		at.DES_CONSULTA as desConsulta,
+		at.DES_RESPUESTA as desRespuesta,
+		at.NUM_PERIODO_TRIM as numPeriodoTrim,
+	    at.FEC_CREA as fecCrea 
+	from
+		VMCDBA.INF1ATENCION_CONSULTA at,
+	    TAGDBA.TAG1OCEX oc,
+	    VMCDBA.DRC8SECTOR_NEGOCIO se,
+	    VMCDBA.INF8TIPO_SOLICITANTE so 
+	where
+		at.ID_OCEX = oc.ID_OCEX
+	    and at.ID_SECTOR_NEGOCIO = se.ID_SECTOR_NEGOCIO
+	    and at.ID_TIPO_SOLICITANTE = so.ID_TIPO_SOLICITANTE
+		and at.ID_OCEX = #idOcex#
+		and at.ID_ATENCION = #idAtencionConsulta#
+  </select> 
 
 </sqlMap>

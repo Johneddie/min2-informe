@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteFichaMercado" >
+
+  <typeAlias alias="ReporteFichaMercado" type="pe.gob.mincetur.report.ocex.dto.ReporteFichaMercadoDto" />
+	
+  <select id="getReporteFichaMercado" resultClass="ReporteFichaMercado" parameterClass="ReporteFichaMercado">
+	select 
+		fm.ID_FICHA as idFichaMercado,
+	    fm.ID_OCEX as idOcex,
+		oc.DES_OCEX as desOcex,
+		fm.DES_NOMEN_ARANCEL as desNomenArancel,
+	    fm.DES_NOM_COMERCIAL as desNomComercial,
+	    fm.DES_REQUI_ACCESO as desRequiAcceso,
+		fm.DES_TENDEN_MERCADO as desTendenMercado,
+		fm.DES_ESTAC_PROD as desEstacProd,
+		fm.DES_INGRESO_MERCADO as desIngresoMercado,
+		fm.DES_CADENA_DISTRIB as desCadenaDistrib,
+		fm.DES_CRITE_SELECC as desCriteSelecc,
+		fm.DES_PRESEN_MERCADO as desPresenMercado,
+		fm.DES_ACTIV_PROMO as desActivPromo,
+		fm.NUM_PERIODO_TRIM as numPeriodoTrim,
+	    fm.FEC_CREA as fecCrea 
+	from 
+		VMCDBA.INF1FICHA_MERCADO fm,
+		TAGDBA.TAG1OCEX oc
+	where 
+		fm.ID_OCEX = oc.ID_OCEX
+		and fm.ID_FICHA = #idFichaMercado#
+	    and fm.ID_OCEX = #idOcex#
+  </select> 
+  
+
+</sqlMap>

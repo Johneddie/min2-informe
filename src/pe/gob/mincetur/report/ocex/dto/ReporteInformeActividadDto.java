@@ -31,7 +31,7 @@ public class ReporteInformeActividadDto {
     private Integer numExpositores;
     private Integer numAsistentes;
     private Double numSuperficie;
-    private String horarioActividad;
+    private String desHorActividad;
     private String descripcionActividad;
     private String desInfoMercado;
     private String desValoraCuali;
@@ -171,12 +171,6 @@ public class ReporteInformeActividadDto {
 	public void setNumAsistentes(Integer numAsistentes) {
 		this.numAsistentes = numAsistentes;
 	}
-	public String getHorarioActividad() {
-		return horarioActividad;
-	}
-	public void setHorarioActividad(String horarioActividad) {
-		this.horarioActividad = horarioActividad;
-	}
 	public String getDescripcionActividad() {
 		return descripcionActividad;
 	}
@@ -243,5 +237,12 @@ public class ReporteInformeActividadDto {
 	public void setDesPais(String desPais) {
 		this.desPais = desPais;
 	}
+	public String getDesHorActividad() {
+		return desHorActividad;
+	}
+	public void setDesHorActividad(String desHorActividad) {
+		this.desHorActividad = desHorActividad;
+	}
+	
    
 }

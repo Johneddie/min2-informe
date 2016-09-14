@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="reporteAlertaParticipacion" >
+
+  <typeAlias alias="ReporteAlertaParticipacion" type="pe.gob.mincetur.report.ocex.dto.ReporteAlertaParticipacionDto" />
+  
+  <select id="getReporteAlertaParticipacion" resultClass="ReporteAlertaParticipacion" parameterClass="ReporteAlertaParticipacion">
+	select 
+		oc.DES_OCEX as desOcex,
+		ap.DES_LICITACION as desLicitacion,
+	    ap.DES_PRODUCTO_REQU as desProductoRequ,
+		ap.FEC_PUBLICA_LICITACI as fecPublicaLicitaci,
+	    ap.FEC_INICIO_VIGENCIA as fecInicioVigencia,
+	    ap.DES_ENT_LICITANTE as desEntLicitante,
+	    ap.DES_ENLACE_LICITACIO as desEnlaceLicitacio,
+	    ap.DES_ENT_COMPRA as desEntCompra,
+	    ap.DES_CONTACTO as desContacto,
+	    ap.NUM_PERIODO_TRIM as numPeriodoTrim,
+	    ap.FEC_CREA as fecCrea 
+	from
+		VMCDBA.INF1ALERTA_PARTICIPACION ap,
+		TAGDBA.TAG1OCEX oc  
+	where 
+		ap.ID_OCEX = oc.ID_OCEX
+		and ap.ID_OCEX = #idOcex#
+		and ap.ID_ALERTA_PARTICIPAC = #idAlertaParticipacion#
+  </select> 
+
+</sqlMap>
