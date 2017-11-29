@@ -1,0 +1,56 @@
+REQ
+---
+Se recopilan y especifican los requerimientos de software.
+Se retiran las actividades correspondientes al manual de usuario, debido a que según juicio de expertos casi nunca se da en esta etapa. Esto no genera incumplimiento del marco de trabajo de la norma ISO/IEC 29110 ya que estas tareas son opcionales.
+
+
+SFD
+---
+Se define el diseño arquitectónico del software así como de los casos y procedimientos de software.
+
+Se conservan las tareas de la norma ISO/IEC 29110. Las actividades según esta norma que corresponden al diseñador, en la práctica son llevadas a cabo por los analistas BPM y de sistemas, ya que según juicio de expertos aún en las empresas grandes estas actividades son asumidades por este perfil.
+Las actividades de generación o actualización, verificación de casos y procedimientos de prueba pueden ser realizados por un rol más especializado como un analista de pruebas o de calidad.
+
+Para la aprobación tanto del diseño de software así como de los casos y procedimientos de prueba se involucra o involucran al o a los interesados y a los analistas. 
+
+
+SBA
+---
+Se implementan los componentes de software tanto bpm como de servicios.
+Se conservan todas actividades de este subproceso según la normal ISO/IEC 29110. Podemos resaltar la participación del o de los interesados en la tarea de validación de las pruebas unitarias.
+En esta etapa el programador es el actor principal en la mayor parte de las tareas.
+
+SFC
+---
+La ejecución de pruebas cuenta con la participación del o de los interesados, esta tarea puede ser llevado a cabo por un rol más especializado como un analista de pruebas o de calidad.
+Las tareas de verificación y aprobación tanto del manual de operación como del manual de usuario deben ser realizadas por el o los interesados.
+
+
+
+ENT
+---
+De las misma forma que las demás etapas iterativas se conservan las tareas de la norma ISO/IEC 29110, por lo que la empresa que adopte el marco metodológico puede certificarse en este norma.
+En esta etapa el diseñador es el actor principal, pero al igual que en la fase de sprint básico en la mayoría de empresas estas labores son realizadas por los análistas.
+Esta etapa concluye con la entrega del producto al o a los interesados.
+
+
+
+
+
+scrum study
+scrum alliance
+
+
+open 
+
+
+Por mi Dios a quien le he fallado
+Buen animo con mis compañeros y amigos
+Por mis hijos para q tengan amor de madre
+Por no vivir desconcertado por las mentiras
+Por la paz de mi mente
+Por la tranquilidad de mi corazón
+Por mis finanzas
+Que Dios se apiade de mi!
+
+
