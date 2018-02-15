@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration>
+	<projectContext id="projectContext">
+		<proceso megaproceso="recurso" macroproceso="humano" proceso="planeamiento"/>
+		<artefacto version="1.0.0" nroPase="PAS20181U230300011" location="D:\REPO_GEN_PROY\TESTDEMO10"/>
+		
+		<sharedlib>
+			<service serviceName="AsignacionPersonalService" >
+				<dao daoType="none" domainObjectName="Puesto"/>
+			</service>
+		</sharedlib>
+	</projectContext>
+	
+	<ibatorContext id="sp" targetRuntime="Ibatis2Java5">
+		<jdbcConnection driverClass="com.informix.jdbc.IfxDriver" 
+			connectionURL="jdbc:informix-sqli://150.100.21.128:50005/sp:INFORMIXSERVER=d01_ina"
+			userId="conweb" password="Conweb" />
+
+		<table tableName="t9104puestocap" domainObjectName="Puesto" />
+
+		
+	</ibatorContext>
+	
+	
+</ibatorConfiguration>
