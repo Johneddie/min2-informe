@@ -1,0 +1,28 @@
+[12:10 AM] Diego Tarazona: VALIDACIONES
+
+
+1. Saldo mayor a los minutos solicitados
+2. Los minutos solicitados mayor a 180(3 horas)
+3. Solo es aplicable para los movimientos descontables
+3. Que no registre la papeleta de compensacion si movimiento es igual a otra papeleta
+5. Los minutos considerados para cada papeleta deben de ser continuos
+6. Es posible registrar mas de 1 papeleta de compensacion por horas al dia. **
+
+[12:14 AM] Diego Tarazona: create table admsp.txxxxpapeleta 
+(
+cod_personal varchar(4),
+cod_periodo varchar(6),
+fec_ingreso date,
+hor_ingreso varchar(8),
+cod_movim varchar(4),
+cod_estado char(1),
+ind_del char(1),
+cod_usuregis varchar(15),
+fec_regis datetime year to second,
+cod_usumodif         varchar(15),
+fec_modif            datetime year to second
+  );
+
+alter table admsp.txxxxpapeleta
+add constraint primary key (cod_personal,cod_periodo,fec_ingreso,hor_ingreso)
+constraint pk_txxxxpapeleta;
